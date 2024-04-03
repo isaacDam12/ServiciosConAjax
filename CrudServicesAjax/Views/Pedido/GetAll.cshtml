@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript"  src="~/js/UsandoFetch.js"></script>
+
+<h3 class="text-center">Pedidos</h3>
+<div class="mb-3">
+    <button class="btn btn-info" style="color:aliceblue" onclick="ShowModal()">Agregar</button>
+</div>
+
+<div class="table-responsive">
+    <table id="tablaPedidos" class="table table-bordered table-info text-center">
+        <thead class="table table-dark">
+            <tr>
+                <th>Editar</th>
+                <th>ID Pedido</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody id="tablaBody">
+        </tbody>
+    </table>
+</div>
+
+
+<div class="modal" tabindex="-1" id="Form">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Pedidos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <input type="hidden" id="txtIdPedido" />
+                <label class="form-label">Ingresa el Nombre</label><br />
+                <input type="text" id="txtNombre" class="form-control" /> <br />
+
+                <label class="form-label">Ingresa el Precio</label><br />
+                <input type="number" id="txtPre" class="form-control" /> <br />
+        
+                <label class="form-label">Ingresa el IdUsuario</label><br />
+                <input type="number" id="txtId" class="form-control" /><br />
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success" id="enviarbtn" onclick="Guardar()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

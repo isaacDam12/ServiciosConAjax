@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewData["Title"] = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="~/js/Metodos.js"></script>
+
+<h3 class="text-center">Usuario</h3>
+
+
+<div class="mb-3">
+    <button class="btn btn-info" style="color:aliceblue" onclick="ShowModal()">Agregar</button>
+</div>
+
+<div class="table-responsive"> 
+    <table class="table table-borderless table-dark text-center" id="SubCategorias">
+        <thead>
+            <tr>
+                <th>Editar</th>
+                <th>Nombre</th>
+                <th>ApellidoPaterno</th>
+                <th>ApellidoMaterno</th>
+                <th>Edad</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        </tbody>
+
+    </table>
+</div>
+
+
+
+<div class="modal" tabindex="-1" id="Form">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Empleados</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <input type="hidden" id="txtIdUsuario" />
+                <label class="form-label">Ingresa tu nombre</label><br />
+                <input type="text" id="txtNombre" class="form-control" /> <br />
+                <label class="form-label">Ingresa tu ApellidoP</label><br />
+                <input type="text" id="txtApeP" class="form-control" /> <br />
+                <label class="form-label">Ingresa tu ApellidoM</label><br />
+                <input type="text" id="txtApeM" class="form-control" /><br />
+                <label class="form-label">Ingresa tu Edad</label><br />
+                <input type="number" id="txtEdad" class="form-control" /><br />
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success" id="enviarbtn" onclick="Guardar()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
